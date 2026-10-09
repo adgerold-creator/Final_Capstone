@@ -1,0 +1,137 @@
+:root {
+  --color-page: #f7f3ee;
+  --color-surface: #ffffff;
+  --color-text: #2f2f2f;
+  --color-muted: #5f5f5f;
+  --color-brand: #8f3555;
+  --color-brand-dark: #65233c;
+  --color-accent: #d9a441;
+  --color-border: #d7cdc4;
+  --color-focus: #005fcc;
+
+  --space-sm: .5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  --radius-sm: .4rem;
+  --radius-md: .75rem;
+
+  --font-body: Arial, sans-serif;
+  --max-width: 72rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-body);
+  line-height: 1.5;
+  background: var(--color-page);
+  color: var(--color-text);
+}
+
+body {
+  margin: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-brand-dark);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: .2rem solid var(--color-focus);
+  outline-offset: .2rem;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: .5rem .75rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  background: #f0e6ea;
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--color-brand);
+  color: #fff;
+  font-weight: 700;
+}
+
+main {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+  padding-block: var(--space-xl);
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+footer {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  text-align: center;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 40rem) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    width: 100%;
+    flex-direction: column;
+    gap: .25rem;
+  }
+
+  .site-nav a {
+    width: 100%;
+  }
+}
