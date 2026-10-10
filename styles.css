@@ -310,6 +310,21 @@ h2 {
     font: inherit;
     font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 .25rem 0 var(--color-brand-dark);
+    transition:
+        transform 160ms ease-out,
+        box-shadow 160ms ease-out;
+}
+
+.adoption-form button:hover,
+.adoption-form button:focus-visible {
+    transform: translateY(-.15rem);
+    box-shadow: 0 .4rem 0 var(--color-brand-dark);
+}
+
+.adoption-form button:active {
+    transform: translateY(.1rem);
+    box-shadow: 0 .1rem 0 var(--color-brand-dark);
 }
 
 .adoption-form button:hover {
@@ -359,5 +374,11 @@ footer {
 
     .site-nav a {
         width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .adoption-form button {
+        transition: none;
     }
 }
