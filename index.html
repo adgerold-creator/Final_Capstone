@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Paws of Love Refuge | Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="navigation.js" defer></script>
 </head>
 
 <body>
     <header class="site-header">
         <a class="site-name" href="index.html">Paws of Love Refuge</a>
 
-        <nav aria-label="Main navigation">
-            <ul class="site-nav">
+        <nav aria-label="Primary navigation">
+            <button class="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false" hidden>
+                Menu
+            </button>
+
+            <ul class="nav-list" id="primary-nav">
                 <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="pets.html">Meet the Pets</a></li>
                 <li><a href="adoption.html">Adoption Request</a></li>
@@ -21,7 +26,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <h1>Find Your Next Companion</h1>
         <p>Paws of Love Refuge helps connect adoptable pets with people who are ready to give them a safe and caring
             home.</p>
@@ -55,5 +60,6 @@
         <p>&copy; 2026 Paws of Love Refuge</p>
     </footer>
 </body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 </html>
