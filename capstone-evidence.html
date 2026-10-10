@@ -27,9 +27,9 @@
                 <dt>Pages</dt>
                 <dd>Home, Meet the Pets, Adoption Request</dd>
                 <dt>Repository</dt>
-                <dd>[URL]</dd>
+                <dd>https://github.com/adgerold-creator/Final_Capstone</dd>
                 <dt>Published site</dt>
-                <dd>[URL]</dd>
+                <dd>https://adgerold-creator.github.io/Final_Capstone/</dd>
                 <dt>Code defense</dt>
                 <dd>[URL or live-defense statement]</dd>
             </dl>
@@ -52,6 +52,7 @@
                         <td>Use consistent landmarks, heading levels, and source order so each page is easy to
                             understand and navigate.</td>
                         <td>Refactor</td>
+                    </tr>
                     <tr>
                         <td>Shared design system</td>
                         <td>Shared styles.css</td>
@@ -138,22 +139,26 @@
                         </td>
                         <td>New</td>
                     </tr>
-                    </tr>
+
                 </tbody>
             </table>
-            <p>Add enough rows to locate semantic structure, the design system, figure, table, form, SVG,
-                navigation/layout, positioning/layering, shape, effect/motion, testing, and documentation.</p>
         </section>
         <section>
             <h2>3. Focused Release Check</h2>
             <ul>
-                <li>HTML and CSS validation: [result]</li>
-                <li>Published links and assets: [result]</li>
-                <li>320 CSS pixels and 200% zoom: [result]</li>
-                <li>Keyboard and visible focus: [result]</li>
-                <li>Form labels, constraints, errors, and recovery: [result]</li>
-                <li>Reduced motion and JavaScript unavailable: [result]</li>
-                <li>Two current browsers: [result]</li>
+                <li>HTML and CSS validation: Passed with revisions. Validation identified an ARIA issue in the table
+                    scroll container, which was corrected and successfully revalidated.</li>
+                <li>Published links and assets: Passed. Navigation links, the featured dog image, and the shelter SVG
+                    loaded correctly from the published GitHub Pages site.</li>
+                <li>320 CSS pixels and 200% zoom: Passed after repairing the Meet the Pets table overflow at 320 CSS
+                    pixels. The site remained readable at 200% zoom.</li>
+                <li>Keyboard and visible focus: Passed. Navigation links and form controls were reachable in a logical
+                    order and showed visible focus.</li>
+                <li>Form labels, constraints, errors, and recovery: Passed. Required fields and invalid email input
+                    triggered native browser validation, and the errors cleared after correction.</li>
+                <li>Reduced motion and JavaScript unavailable: Reduced-motion behavior remained usable. JavaScript-off
+                    testing was not completed for this checkpoint.</li>
+                <li>Two current browsers: Passed in Chrome and Firefox.</li>
             </ul>
         </section>
         <section>
@@ -169,26 +174,97 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>[What happened and under which condition]</td>
-                        <td>[Affected content, task, or user]</td>
-                        <td>[What changed]</td>
-                        <td>[Repeated condition and observed result]</td>
+                        <td>At 320 CSS pixels, the Meet the Pets table extended slightly beyond the available width and
+                            the cell padding felt crowded.</td>
+                        <td>Users on narrow screens could experience clipped content or page-level horizontal scrolling.
+                        </td>
+                        <td>I wrapped the table in a horizontally scrollable container and reduced the table cell
+                            padding at narrow widths.</td>
+                        <td>I repeated the 320 CSS pixel test. The page no longer overflowed horizontally, the table
+                            stayed readable, and any horizontal scrolling remained inside the table container.</td>
+                    </tr>
+                    <tr>
+                        <td>HTML validation found that the table scroll container used <code>aria-label</code> on a
+                            plain <code>div</code> without an appropriate semantic role.</td>
+                        <td>The markup was invalid, and the accessible name was not attached to a meaningful region.
+                        </td>
+                        <td>I added <code>role="region"</code> to the scroll container and changed the accessible name
+                            to <code>aria-labelledby="available-pets-heading"</code> so it uses the visible section
+                            heading.</td>
+                        <td>I revalidated <code>pets.html</code> in the W3C validator after the change and confirmed
+                            that the ARIA error was removed.</td>
+                    </tr>
+
+                    <tr>
+                        <td>During form testing, submitting the Adoption Request form with required fields blank or an
+                            invalid email triggered the browser's validation messages.</td>
+                        <td>The form prevented incomplete or incorrectly formatted information from being submitted and
+                            showed the user what needed attention.</td>
+                        <td>No repair was needed because the native constraints and labels provided clear validation and
+                            recovery.</td>
+                        <td>I corrected the missing and invalid fields and submitted again. The validation errors
+                            cleared as the entries met the required constraints.</td>
                     </tr>
                 </tbody>
             </table>
-            <p>Add two more rows.</p>
         </section>
         <section>
             <h2>5. Screenshots</h2>
-            <p>[Insert two or three labeled screenshots. Connect each screenshot to a requirement, test, or repair.]</p>
+
+            <figure>
+                <img src="images/table-320-retest.png"
+                    alt="Meet the Pets page tested at a 320 CSS pixel viewport in Chrome DevTools.">
+
+                <figcaption>
+                    320 CSS pixel retest of the Meet the Pets page after repairing the table overflow. The page stays
+                    within the viewport and the table remains readable.
+                </figcaption>
+            </figure>
         </section>
         <section>
             <h2>6. Sources, Assets, and AI</h2>
-            <p><strong>MDN/official sources:</strong> [Concise list with links]</p>
-            <p><strong>Assets and licenses:</strong> [Asset, creator, source, license/permission, and modification]</p>
-            <p><strong>AI disclosure:</strong> [State “No generative AI was used,” or document the tool, purpose,
-                meaningful assistance, verification, and final decision.]</p>
+
+            <p><strong>MDN/official sources:</strong>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility">
+                    MDN: HTML table accessibility
+                </a>;
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation">
+                    MDN: Client-side form validation
+                </a>;
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip-path">
+                    MDN: clip-path
+                </a>;
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@supports">
+                    MDN: @supports
+                </a>;
+                and the
+                <a href="https://validator.w3.org/">
+                    W3C HTML Validator
+                </a>.
+                Accessed October 9, 2026.
+            </p>
+
+            <p><strong>Assets and licenses:</strong>
+                Featured adoption dog photograph by mexitographer, sourced from Adobe Stock and used under the Adobe
+                Stock license.
+                The file is saved as <code>images/dog_adopt.jpeg</code> and is displayed responsively on the Home page.
+                The shelter branding SVG was adapted from my earlier GIT 337 coursework and revised for the Paws of Love
+                Refuge capstone.
+            </p>
+
+            <p><strong>AI disclosure:</strong>
+                I used ChatGPT during the capstone checkpoint to identify possible requirement gaps and suggest
+                debugging hypotheses during testing. For example, AI suggested checking whether the narrow-screen table
+                issue was caused by page-level overflow and whether the validator error was related to the ARIA markup
+                on the table container. I made the final integration decisions and changes myself, including using an
+                overflow container for the table and revising the table region markup after validation. I verified the
+                results through my own 320 CSS pixel test, keyboard and form testing, and W3C validation before
+                recording the findings in this report.
+            </p>
         </section>
+
     </main>
 </body>
 

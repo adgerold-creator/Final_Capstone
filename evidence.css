@@ -48,3 +48,9 @@ dd {
     } 
 }
 
+figure img {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  height: auto;
+}
