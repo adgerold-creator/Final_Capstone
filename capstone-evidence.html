@@ -87,7 +87,7 @@
 
                     <tr>
                         <td>SVG</td>
-                        <td>Meet the Pets or shared site branding</td>
+                        <td>Home</td>
                         <td>Add a purposeful original or substantially edited graphic that supports the shelter identity
                             or content.</td>
                         <td>Adapt</td>
@@ -118,8 +118,9 @@
 
                     <tr>
                         <td>Effect and motion</td>
-                        <td>Planned for final capstone</td>
-                        <td>Adapt the Module 6 interaction treatment later with reduced-motion support.</td>
+                        <td>Adoption Request</td>
+                        <td>Provide clear hover, focus, and active feedback on the submit button while respecting
+                            reduced-motion preferences.</td>
                         <td>Adapt</td>
                     </tr>
 
@@ -155,8 +156,9 @@
                     order and showed visible focus.</li>
                 <li>Form labels, constraints, errors, and recovery: Passed. Required fields and invalid email input
                     triggered native browser validation, and the errors cleared after correction.</li>
-                <li>Reduced motion and JavaScript unavailable: Reduced-motion support is planned for the final capstone.
-                    JavaScript-off testing was not completed for this checkpoint.</li>
+                <li>Reduced motion and JavaScript unavailable: Passed. With reduced motion enabled, the adoption button
+                    state changes remained clear without transition animation. With JavaScript disabled, the Menu button
+                    stayed hidden and the navigation links remained visible and usable.</li>
                 <li>Two current browsers: Passed in Chrome and Firefox.</li>
             </ul>
         </section>
@@ -219,6 +221,25 @@
                     within the viewport and the table remains readable.
                 </figcaption>
             </figure>
+            <figure>
+                <img src="images/nav-320-open.png"
+                    alt="Home page at a 320 CSS pixel viewport with the responsive navigation menu open.">
+
+                <figcaption>
+                    Responsive navigation tested at 320 CSS pixels with JavaScript enabled. The Menu button opens the
+                    navigation links, and the current Home page remains clearly indicated.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/form-validation.png"
+                    alt="Adoption Request form showing the browser's native required-field validation message on the email field.">
+
+                <figcaption>
+                    Native form validation test on the Adoption Request page. Submitting with the required email field
+                    empty triggered the browser validation message and prevented incomplete submission.
+                </figcaption>
+            </figure>
         </section>
         <section>
             <h2>6. Sources, Assets, and AI</h2>
@@ -254,13 +275,26 @@
             </p>
 
             <p><strong>AI disclosure:</strong>
-                I used ChatGPT during the capstone checkpoint to identify possible requirement gaps and suggest
-                debugging hypotheses during testing. For example, AI suggested checking whether the narrow-screen table
-                issue was caused by page-level overflow and whether the validator error was related to the ARIA markup
-                on the table container. I made the final integration decisions and changes myself, including using an
-                overflow container for the table and revising the table region markup after validation. I verified the
-                results through my own 320 CSS pixel test, keyboard and form testing, and W3C validation before
-                recording the findings in this report.
+                I used ChatGPT during the capstone to identify possible requirement gaps and suggest debugging and
+                implementation approaches. This included reviewing whether the site still needed stronger responsive
+                navigation, positioning and layering, reduced-motion support, and final release testing. I made the
+                final decisions about what to adapt from my earlier coursework and integrated the changes into the site
+                myself. For example, I reused and revised the responsive navigation pattern from my Module 5 work,
+                adapted interaction and reduced-motion ideas from Module 6, and reused the positioning/layering approach
+                from my earlier Layered Feature Story assignment. I verified the results through my own 320 CSS pixel
+                and 200% zoom tests, keyboard and form testing, JavaScript-off testing, reduced-motion testing,
+                two-browser testing, and W3C validation before recording the final evidence.
+            </p>
+            <p><strong>Prior coursework reused/adapted:</strong>
+                Responsive navigation patterns from my Module 5 navigation project were adapted into the shared
+                navigation used across all three capstone pages, including the mobile Menu button, expanded/collapsed
+                navigation behavior, Escape-key support, and JavaScript-off fallback. Interaction and reduced-motion
+                patterns from my Module 6 microinteraction work were adapted to the Adoption Request submit button to
+                provide hover, focus, active, and reduced-motion states. Positioning and layering ideas from my earlier
+                Layered Feature Story assignment were adapted to the Home page feature header, where the issue badge is
+                positioned within the featured content area and returns to normal flow at narrow widths. The shelter
+                branding SVG was also adapted from my earlier GIT 337 coursework and revised for the Paws of Love Refuge
+                capstone, where it appears on the Home page as part of the shelter branding treatment.
             </p>
         </section>
 
