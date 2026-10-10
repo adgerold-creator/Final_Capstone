@@ -230,6 +230,28 @@ h2 {
     background: var(--color-brand-dark);
 }
 
+/* Shelter branding graphic */
+.clipped-treatment {
+    margin: var(--space-lg) 0;
+}
+
+.clipped-treatment img {
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+}
+
+@supports (clip-path: polygon(0 0)) {
+    .clipped-treatment img {
+        clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
+    }
+}
+
+.clipped-treatment figcaption {
+    margin-top: var(--space-sm);
+    color: var(--color-muted);
+}
+
 footer {
     margin-top: var(--space-xl);
     padding: var(--space-lg);
