@@ -131,23 +131,6 @@ summary:focus-visible {
     cursor: pointer;
 }
 
-.site-nav a {
-    display: inline-block;
-    padding: .5rem .75rem;
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-}
-
-.site-nav a:hover {
-    background: #f0e6ea;
-}
-
-.site-nav a[aria-current="page"] {
-    background: var(--color-brand);
-    color: #fff;
-    font-weight: 700;
-}
-
 main {
     width: min(100% - 2rem, var(--max-width));
     margin-inline: auto;
@@ -157,6 +140,26 @@ main {
 h1,
 h2 {
     line-height: 1.2;
+}
+
+.feature-header {
+    position: relative;
+    padding: var(--space-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.issue-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .35rem .6rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    color: var(--color-text);
+    font-size: .85rem;
+    font-weight: 700;
 }
 
 .featured-pet {
@@ -244,6 +247,12 @@ h2 {
     .pets-table th,
     .pets-table td {
         padding: .5rem;
+    }
+
+    .issue-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: var(--space-sm);
     }
 }
 
@@ -361,21 +370,6 @@ footer {
     border-top: 1px solid var(--color-border);
 }
 
-@media (max-width: 40rem) {
-    .site-header {
-        align-items: flex-start;
-    }
-
-    .site-nav {
-        width: 100%;
-        flex-direction: column;
-        gap: .25rem;
-    }
-
-    .site-nav a {
-        width: 100%;
-    }
-}
 
 @media (prefers-reduced-motion: reduce) {
     .adoption-form button {
