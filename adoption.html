@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,11 +23,60 @@
 
     <main>
         <h1>Adoption Request</h1>
-        <p>Start the adoption process by sharing a little information about yourself and the kind of pet you are hoping to meet.</p>
+        <p>Start the adoption process by sharing a little information about yourself and the kind of pet you are hoping
+            to meet.</p>
+        <section aria-labelledby="request-heading">
+            <h2 id="request-heading">Adoption Request Form</h2>
+
+            <form class="adoption-form" action="#" method="post">
+                <div class="form-field">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="pet">Pet you are interested in</label>
+                    <select id="pet" name="pet" required>
+                        <option value="">Select a pet</option>
+                        <option value="milo">Milo</option>
+                        <option value="luna">Luna</option>
+                        <option value="pepper">Pepper</option>
+                    </select>
+                </div>
+
+                <fieldset>
+                    <legend>Preferred next step</legend>
+
+                    <div class="form-choice">
+                        <input type="radio" id="shelter-visit" name="next-step" value="shelter-visit" required>
+                        <label for="shelter-visit">Schedule a shelter visit</label>
+                    </div>
+
+                    <div class="form-choice">
+                        <input type="radio" id="adoption-fair" name="next-step" value="adoption-fair">
+                        <label for="adoption-fair">Attend the next adoption fair</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-field">
+                    <label for="message">Tell us a little about your home and what you are looking for</label>
+                    <textarea id="message" name="message" rows="5" minlength="20" required></textarea>
+                    <p class="form-help">Please enter at least 20 characters.</p>
+                </div>
+
+                <button type="submit">Submit Adoption Request</button>
+            </form>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Paws of Love Refuge</p>
     </footer>
 </body>
+
 </html>

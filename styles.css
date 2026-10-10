@@ -161,6 +161,75 @@ h2 {
     font-weight: 700;
 }
 
+/* Adoption form */
+.adoption-form {
+    display: grid;
+    gap: var(--space-lg);
+    max-width: 42rem;
+}
+
+.form-field {
+    display: grid;
+    gap: .4rem;
+}
+
+.adoption-form label,
+.adoption-form legend {
+    font-weight: 700;
+}
+
+.adoption-form input,
+.adoption-form select,
+.adoption-form textarea {
+    width: 100%;
+    padding: .75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font: inherit;
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.adoption-form fieldset {
+    margin: 0;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.form-choice {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin-top: .75rem;
+}
+
+.form-choice input {
+    width: auto;
+}
+
+.form-help {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: .95rem;
+}
+
+.adoption-form button {
+    width: fit-content;
+    padding: .8rem 1.1rem;
+    border: 2px solid var(--color-brand);
+    border-radius: var(--radius-sm);
+    background: var(--color-brand);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.adoption-form button:hover {
+    background: var(--color-brand-dark);
+}
+
 footer {
     margin-top: var(--space-xl);
     padding: var(--space-lg);
